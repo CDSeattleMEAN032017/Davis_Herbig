@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Gimme yo info:</legend>
+        <form action="result" method="POST" id="polly">
+            <p><label for="Name">Your Name:  </label><input type="text" name="Name" id="name"></p>
+            <p><label for="Location">Dojo Location:  </label><select name="Dojo Location" id="">
+                    <option value="Bermuda">Bermunda</option>
+                    <option value="Bahama">Bahama</option>
+                    <option value="Come on">Come On</option>
+                    <option value="pretty mama">Pretty Mama</option>
+                </select></p>
+            <p><label for="Language">Favorite Language:  </label><select name="Favorite Language" id="language">
+                    <option value="English">English</option>
+                    <option value="Swiss">Swiss</option>
+                    <option value="C#">C#</option>
+                    <option value="Python">AAAHHH A SNAAAKE!!</option>
+                </select></p>
+            <p>
+                <label for="Comment">Comments (optional):</label>
+                <br>
+                <textarea name="Comment" form="polly" placeholder="You know you wanna..."></textarea>
+            </p>
+            <p>
+                <input type="submit" value="DO IT!">
+            </p>
+        </form>
+    </fieldset>
+</body>
+</html>
