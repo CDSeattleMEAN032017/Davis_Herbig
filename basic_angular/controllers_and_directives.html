@@ -1,0 +1,55 @@
+ 
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First Site</title>
+    <script src = './bower_components/angular/angular.js'></script>
+    <script type='text/javascript'>
+
+        var app = angular.module('app',[]);
+        app.controller('divController', function ($scope){
+            $scope.foodList = [
+
+            ];
+            $scope.addFood = function(){
+                $scope.foodList.push($scope.newFood);
+                console.log($scope.newFood);
+                $scope.newFood = '';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller='divController'>
+    <!--Everything-->
+        <div class="column">
+        <!--left column-->
+            <div>
+            <!--First line, Left side-->
+                <p>
+                    <label>Favorite Food:</label>
+                    <input type="text" name="food" id="" ng-model = "newFood">
+                    <input type="submit" value="Add Food" ng-click="addFood()">
+                </p>
+            </div>
+            <div>
+            <!--Second line, left side-->
+                <p>Currently typing:  <span>{{newFood}}</span></p>
+            </div>
+        </div>
+        <div class="column">
+        <!--Right side-->
+            <input type="text" name="" id="" ng-model = "filterText" placeholder="Filter...">
+            <br>
+            <div id="answerlist">
+                <ul>
+                    <li ng-repeat="food in foodList | filter:filterText">{{ food }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
