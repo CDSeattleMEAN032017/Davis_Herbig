@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Controlling Users</title>
+    <script src = './bower_components/angular/angular.js'></script>
+    <script type='text/javascript'>
+
+        var app = angular.module('app',[]);
+        app.controller('userController', function ($scope){
+            $scope.userList = [
+                {first: "Billy", last: "Bob", lang:"Pig Latin"}
+            ];
+            $scope.addUser = function(){
+                var newbie = {};
+                newbie.first = $scope.user.first;
+                newbie.last = $scope.user.last;
+                newbie.lang = $scope.user.lang;
+                console.log(newbie);
+                $scope.userList.push(newbie);
+                $scope.user.first="";
+                $scope.user.last="";
+                $scope.user.lang="";
+                console.log(newbie);
+            }
+            $scope.deleteUser = function(deadMan){
+                $scope.userList = $scope.userList.filter( function(userObject){
+                    return userObject !== deadMan;
+                })
+            }
+        });
+    </script>
+</head>
+<body>
+    <fieldset ng-controller="userController">
+        <legend>Users Controller</legend>    
+        <form ng-submit="addUser()" ng-model="user">
+            <label for="">First Name:  </label>
+            <input type="text" ng-model="user.first" id="">
+            <br>
+            <label for="">last Name:  </label>
+            <input type="text" ng-model="user.last" id="">
+            <br>
+            <label for="">Favorite Language:  </label>
+            <input type="text" ng-model="user.lang" id="">
+            <input type="submit" value="Create User">
+        </form>
+        <table>
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Fav Language</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in userList track by $index">
+                    <td>{{x.first}}</td>
+                    <td>{{x.last}}</td>
+                    <td>{{x.lang}}</td>
+                    <td><button ng-click='deleteUser(x)'>Delete User</td>
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>    
+</body>
+</html>
