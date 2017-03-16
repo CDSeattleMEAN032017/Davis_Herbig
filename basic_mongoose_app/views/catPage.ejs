@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is the cat you selected:</h1>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><%= Cat.name %></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><%= Cat.age %></td>
+        </tr>
+                <tr>
+            <td>Color:</td>
+            <td><%= Cat.color %></td>
+        </tr>
+    </table>
+    <a href="/">Home</a>
+    <a href="/cats/edit/<%= Cat._id %>">Edit</a>
+</body>
+</html>

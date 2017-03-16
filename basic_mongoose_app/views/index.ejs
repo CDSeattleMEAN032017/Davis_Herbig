@@ -1,0 +1,13 @@
+<h1>So fresh and so clean clean.</h1>
+ <% for (idx in Cats) { %>
+    <p>Name: <a href="/cats/<%= Cats[idx]._id %>"><%= Cats[idx].name %></a>
+      <a href="/cats/edit/<%= Cats[idx]._id %>">Edit dog</a>
+      <form action="/<%= Cats[idx]._id %>/delete/" method='post'>
+        <input type="submit" value="Delete">
+      </form>
+    </p>
+  <% } %>
+<h2>DATS ALL DA CATS</h2>
+<a href="/new">
+    <button style="button">Add a new Cat!!!!!!!!!</button>
+</a>

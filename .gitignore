@@ -1,2 +1,4 @@
-#Ignoring all JQuery Files.
-bower_components/**
+#Ignoring all install Files.
+**/bower_components/**
+**/node_modules/**
+**/do_not_sync/**
